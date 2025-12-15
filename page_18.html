@@ -1,0 +1,186 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Current Challenges in RAG Implementation</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+        
+        body, html {width: 1280px; min-height: 720px; margin: 0;
+            padding: 0;
+            font-family: 'Roboto', 'Segoe UI', sans-serif;}
+        
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            
+            background: linear-gradient(135deg, #000000 0%, #111111 100%);
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .challenge-card {
+            border: 1px solid rgba(0, 183, 179, 0.3);
+            border-radius: 8px;
+            padding: 16px;
+            background-color: rgba(0, 183, 179, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .challenge-card:hover {
+            background-color: rgba(0, 183, 179, 0.1);
+            box-shadow: 0 0 15px rgba(0, 183, 179, 0.2);
+        }
+        
+        .challenge-icon {
+            color: #00b7b3;
+            background-color: rgba(0, 183, 179, 0.15);
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+        
+        .paradigm-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-right: 4px;
+            margin-bottom: 4px;
+        }
+    
+body {
+    width: 1280px;
+    min-height: 720px;
+    
+    
+}</style>
+</head>
+<body>
+<div class="slide bg-black text-white flex flex-col">
+<!-- Background grid pattern -->
+<div class="grid-pattern"></div>
+<!-- Content container -->
+<div class="z-10 px-16 py-12 flex flex-col h-full">
+<!-- Title section -->
+<div class="mb-8">
+<h1 class="text-4xl font-bold text-teal-400">Current Challenges in RAG Implementation</h1>
+<div class="w-32 h-1 bg-teal-400 mt-2"></div>
+</div>
+<!-- Introduction -->
+<div class="mb-6">
+<p class="text-xl text-gray-300">
+                    Despite advances in RAG technology, several key challenges impede widespread adoption and effectiveness.
+                </p>
+</div>
+<!-- Challenges Grid -->
+<div class="flex-grow grid grid-cols-2 gap-6">
+<!-- Retrieval Quality Issues -->
+<div class="challenge-card">
+<div class="flex items-start">
+<div class="challenge-icon">
+<i class="fas fa-search-plus text-xl"></i>
+</div>
+<div class="ml-4">
+<h3 class="text-xl font-semibold text-teal-400 mb-2">Retrieval Quality Issues</h3>
+<ul class="text-gray-300 space-y-2">
+<li class="flex items-start">
+<i class="fas fa-exclamation-circle text-yellow-500 mr-2 mt-1"></i>
+<span>Low precision/recall in retrievers</span>
+</li>
+</ul>
+<div class="mt-2">
+<span class="paradigm-tag bg-gray-700 text-white">Naive RAG</span>
+<span class="paradigm-tag bg-gray-700 text-white">Advanced RAG</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Context Integration Problems -->
+<div class="challenge-card">
+<div class="flex items-start">
+<div class="challenge-icon">
+<i class="fas fa-puzzle-piece text-xl"></i>
+</div>
+<div class="ml-4">
+<h3 class="text-xl font-semibold text-teal-400 mb-2">Context Integration Problems</h3>
+<ul class="text-gray-300 space-y-2">
+<li class="flex items-start">
+<i class="fas fa-exclamation-circle text-yellow-500 mr-2 mt-1"></i>
+<span>Information overload in generation</span>
+</li>
+</ul>
+<div class="mt-2">
+<span class="paradigm-tag bg-gray-700 text-white">Naive RAG</span>
+<span class="paradigm-tag bg-gray-700 text-white">Modular RAG</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Reasoning Limitations -->
+<div class="challenge-card">
+<div class="flex items-start">
+<div class="challenge-icon">
+<i class="fas fa-brain text-xl"></i>
+</div>
+<div class="ml-4">
+<h3 class="text-xl font-semibold text-teal-400 mb-2">Reasoning Limitations</h3>
+<ul class="text-gray-300 space-y-2">
+<li class="flex items-start">
+<i class="fas fa-exclamation-circle text-yellow-500 mr-2 mt-1"></i>
+<span>Continued hallucination despite context</span>
+</li>
+</ul>
+<div class="mt-2">
+<span class="paradigm-tag bg-gray-700 text-white">Naive RAG</span>
+<span class="paradigm-tag bg-gray-700 text-white">Advanced RAG</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Computational Efficiency -->
+<div class="challenge-card">
+<div class="flex items-start">
+<div class="challenge-icon">
+<i class="fas fa-bolt text-xl"></i>
+</div>
+<div class="ml-4">
+<h3 class="text-xl font-semibold text-teal-400 mb-2">Computational Efficiency</h3>
+<ul class="text-gray-300 space-y-2">
+<li class="flex items-start">
+<i class="fas fa-exclamation-circle text-yellow-500 mr-2 mt-1"></i>
+<span>Stale embeddings requiring re-indexing</span>
+</li>
+</ul>
+<div class="mt-2">
+<span class="paradigm-tag bg-gray-700 text-white">Advanced RAG</span>
+<span class="paradigm-tag bg-gray-700 text-white">Modular RAG</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Page number -->
+<div class="absolute bottom-4 right-6 text-gray-500" style="visibility: hidden;">
+                18/22
+            </div>
+</div>
+</div>
+
+</body></html>

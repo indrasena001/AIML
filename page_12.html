@@ -1,0 +1,289 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Modular RAG: Architecture</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+        
+        body, html {width: 1280px; min-height: 720px; margin: 0;
+            padding: 0;
+            font-family: 'Roboto', 'Segoe UI', sans-serif;}
+        
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            
+            background: linear-gradient(135deg, #000000 0%, #111111 100%);
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .highlight-text {
+            color: #00b7b3;
+        }
+        
+        .module-box {
+            border: 1px solid rgba(0, 183, 179, 0.5);
+            border-radius: 8px;
+            padding: 12px;
+            background-color: rgba(0, 183, 179, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .module-box:hover {
+            background-color: rgba(0, 183, 179, 0.15);
+            box-shadow: 0 0 15px rgba(0, 183, 179, 0.3);
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .feature-icon {
+            color: #00b7b3;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        
+        .node {
+            fill: rgba(0, 183, 179, 0.2);
+            stroke: #00b7b3;
+            stroke-width: 2px;
+        }
+        
+        .link {
+            stroke: rgba(0, 183, 179, 0.6);
+            stroke-width: 2px;
+        }
+        
+        .node-label {
+            font-size: 14px;
+            fill: white;
+            text-anchor: middle;
+            dominant-baseline: central;
+            pointer-events: none;
+        }
+    
+body {
+    width: 1280px;
+    min-height: 720px;
+    
+    
+}</style>
+</head>
+<body>
+<div class="slide bg-black text-white flex flex-col">
+<!-- Background grid pattern -->
+<div class="grid-pattern"></div>
+<!-- Content container -->
+<div class="z-10 px-16 py-12 flex flex-col h-full">
+<!-- Title section -->
+<div class="mb-6">
+<h1 class="text-4xl font-bold text-teal-400">Modular RAG: Architecture</h1>
+<div class="w-24 h-1 bg-teal-400 mt-2"></div>
+</div>
+<!-- Main content section -->
+<div class="flex flex-grow">
+<!-- Left column - Architecture diagram -->
+<div class="w-3/5 pr-8">
+<div class="h-96 relative" id="architecture-diagram"></div>
+<div class="text-center mt-4">
+<p class="text-gray-400 italic">Non-linear, dynamic architecture enabling complex query processing</p>
+</div>
+</div>
+<!-- Right column - Key features -->
+<div class="w-2/5">
+<h3 class="text-2xl font-semibold text-white mb-4">Key Architectural Features</h3>
+<div class="space-y-4">
+<div class="feature-item">
+<i class="fas fa-project-diagram feature-icon text-xl"></i>
+<div>
+<h4 class="text-xl font-medium text-teal-400">Dynamic Workflow</h4>
+<p class="text-gray-300">Non-linear flow allowing decisions between modules</p>
+</div>
+</div>
+<div class="feature-item">
+<i class="fas fa-puzzle-piece feature-icon text-xl"></i>
+<div>
+<h4 class="text-xl font-medium text-teal-400">Plug-and-Play Modules</h4>
+<p class="text-gray-300">Interchangeable components for specialized tasks</p>
+</div>
+</div>
+<div class="feature-item">
+<i class="fas fa-sync-alt feature-icon text-xl"></i>
+<div>
+<h4 class="text-xl font-medium text-teal-400">Iterative Processing</h4>
+<p class="text-gray-300">Dynamic retrieval based on intermediate results</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom section - Module types -->
+<div class="mt-6">
+<h3 class="text-xl font-semibold text-white mb-3">Specialized Modules</h3>
+<div class="flex justify-between">
+<div class="module-box w-1/4 mr-4">
+<h4 class="text-lg font-medium text-teal-400 flex items-center">
+<i class="fas fa-search mr-2"></i> Search Modules
+                        </h4>
+<p class="text-gray-300 text-sm">Specialized retrieval strategies</p>
+</div>
+<div class="module-box w-1/4 mr-4">
+<h4 class="text-lg font-medium text-teal-400 flex items-center">
+<i class="fas fa-memory mr-2"></i> Memory Modules
+                        </h4>
+<p class="text-gray-300 text-sm">Context management</p>
+</div>
+<div class="module-box w-1/4 mr-4">
+<h4 class="text-lg font-medium text-teal-400 flex items-center">
+<i class="fas fa-random mr-2"></i> Routing Modules
+                        </h4>
+<p class="text-gray-300 text-sm">Dynamic workflow control</p>
+</div>
+<div class="module-box w-1/4">
+<h4 class="text-lg font-medium text-teal-400 flex items-center">
+<i class="fas fa-object-group mr-2"></i> Fusion Modules
+                        </h4>
+<p class="text-gray-300 text-sm">Information integration</p>
+</div>
+</div>
+</div>
+<!-- Page number -->
+<div class="absolute bottom-4 right-6 text-gray-500" style="visibility: hidden;">
+                12/22
+            </div>
+</div>
+</div>
+<script>
+        // D3.js visualization for Modular RAG architecture
+        document.addEventListener('DOMContentLoaded', function() {
+            const width = 600;
+            const height = 380;
+            
+            const svg = d3.select("#architecture-diagram")
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height);
+                
+            // Define nodes for the architecture
+            const nodes = [
+                { id: "user", label: "User Query", x: 300, y: 30 },
+                { id: "search", label: "Search Module", x: 150, y: 120 },
+                { id: "memory", label: "Memory Module", x: 300, y: 120 },
+                { id: "routing", label: "Routing Module", x: 450, y: 120 },
+                { id: "fusion", label: "Fusion Module", x: 300, y: 220 },
+                { id: "generator", label: "Generator", x: 300, y: 320 }
+            ];
+            
+            // Define links between nodes
+            const links = [
+                { source: "user", target: "search" },
+                { source: "user", target: "memory" },
+                { source: "user", target: "routing" },
+                { source: "search", target: "fusion" },
+                { source: "memory", target: "fusion" },
+                { source: "routing", target: "search" },
+                { source: "routing", target: "memory" },
+                { source: "fusion", target: "generator" },
+                { source: "generator", target: "routing", type: "feedback" }
+            ];
+            
+            // Draw links
+            svg.selectAll(".link")
+                .data(links)
+                .enter()
+                .append("path")
+                .attr("class", "link")
+                .attr("d", d => {
+                    const sourceNode = nodes.find(n => n.id === d.source);
+                    const targetNode = nodes.find(n => n.id === d.target);
+                    
+                    // Create curved paths for feedback loops
+                    if (d.type === "feedback") {
+                        return `M${targetNode.x},${targetNode.y+30} 
+                                C${targetNode.x-100},${targetNode.y+80} 
+                                ${sourceNode.x+100},${sourceNode.y+80} 
+                                ${sourceNode.x},${sourceNode.y+30}`;
+                    }
+                    
+                    // Direct path for other connections
+                    return `M${sourceNode.x},${sourceNode.y+20} L${targetNode.x},${targetNode.y-20}`;
+                })
+                .attr("fill", "none")
+                .attr("marker-end", "url(#arrowhead)")
+                .style("opacity", d => d.type === "feedback" ? 0.7 : 0.9);
+                
+            // Add arrowhead marker
+            svg.append("defs").append("marker")
+                .attr("id", "arrowhead")
+                .attr("viewBox", "0 -5 10 10")
+                .attr("refX", 8)
+                .attr("refY", 0)
+                .attr("markerWidth", 6)
+                .attr("markerHeight", 6)
+                .attr("orient", "auto")
+                .append("path")
+                .attr("d", "M0,-5L10,0L0,5")
+                .attr("fill", "rgba(0, 183, 179, 0.8)");
+            
+            // Draw nodes
+            const nodeGroups = svg.selectAll(".node-group")
+                .data(nodes)
+                .enter()
+                .append("g")
+                .attr("class", "node-group")
+                .attr("transform", d => `translate(${d.x}, ${d.y})`);
+                
+            nodeGroups.append("rect")
+                .attr("class", "node")
+                .attr("x", -80)
+                .attr("y", -25)
+                .attr("width", 160)
+                .attr("height", 50)
+                .attr("rx", 8)
+                .attr("ry", 8);
+                
+            nodeGroups.append("text")
+                .attr("class", "node-label")
+                .text(d => d.label);
+                
+            // Add icons to nodes
+            const icons = [
+                { id: "user", icon: "\uf007" },  // user
+                { id: "search", icon: "\uf002" },  // search
+                { id: "memory", icon: "\uf538" },  // memory
+                { id: "routing", icon: "\uf07a" },  // random
+                { id: "fusion", icon: "\uf382" },  // object group
+                { id: "generator", icon: "\uf1e6" }  // bolt
+            ];
+            
+            nodeGroups.append("text")
+                .attr("class", "fa")
+                .attr("text-anchor", "middle")
+                .attr("dominant-baseline", "central")
+                .attr("x", -55)
+                .attr("y", 0)
+                .attr("font-family", "FontAwesome")
+                .attr("font-size", "16px")
+                .attr("fill", "#00b7b3")
+                .text(d => icons.find(i => i.id === d.id).icon);
+        });
+    </script>
+
+</body></html>

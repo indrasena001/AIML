@@ -1,0 +1,193 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RAG Ecosystem &amp; Tools</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+        
+        body, html {width: 1280px; min-height: 720px; margin: 0;
+            padding: 0;
+            font-family: 'Roboto', 'Segoe UI', sans-serif;}
+        
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            
+            background: linear-gradient(135deg, #000000 0%, #111111 100%);
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .highlight-text {
+            color: #00b7b3;
+        }
+        
+        .tool-card {
+            border: 1px solid rgba(0, 183, 179, 0.3);
+            border-radius: 8px;
+            padding: 16px;
+            background-color: rgba(0, 183, 179, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .tool-card:hover {
+            background-color: rgba(0, 183, 179, 0.1);
+            box-shadow: 0 0 15px rgba(0, 183, 179, 0.2);
+        }
+        
+        .tool-icon {
+            color: #00b7b3;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        
+        .category-label {
+            display: inline-block;
+            padding: 4px 12px;
+            background-color: rgba(0, 183, 179, 0.2);
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #00b7b3;
+            margin-bottom: 12px;
+        }
+    
+body {
+    width: 1280px;
+    min-height: 720px;
+    
+    
+}</style>
+</head>
+<body>
+<div class="slide bg-black text-white flex flex-col">
+<!-- Background grid pattern -->
+<div class="grid-pattern"></div>
+<!-- Content container -->
+<div class="z-10 px-16 py-12 flex flex-col h-full">
+<!-- Title section -->
+<div class="mb-6">
+<h1 class="text-4xl font-bold text-teal-400">RAG Ecosystem &amp; Tools</h1>
+<div class="w-24 h-1 bg-teal-400 mt-2"></div>
+</div>
+<!-- Introduction section -->
+<div class="mb-6">
+<p class="text-xl text-gray-300">
+                    The RAG ecosystem comprises frameworks, databases, and evaluation tools supporting different RAG paradigms.
+                </p>
+</div>
+<!-- Tools grid -->
+<div class="flex-grow grid grid-cols-3 gap-6">
+<!-- Frameworks -->
+<div class="flex flex-col">
+<div class="category-label">
+<i class="fas fa-cube mr-1"></i> Frameworks
+                    </div>
+<div class="tool-card flex-grow">
+<div class="flex items-center mb-3">
+<i class="fas fa-link tool-icon mr-3"></i>
+<h3 class="text-xl font-semibold">LangChain</h3>
+</div>
+<p class="text-gray-300 text-sm">
+                            Popular framework for building LLM applications with RAG capabilities.
+                        </p>
+<div class="mt-3 flex items-center">
+<i class="fas fa-check-circle text-teal-400 mr-2"></i>
+<span class="text-gray-300 text-sm">Integration with various vector databases</span>
+</div>
+</div>
+</div>
+<!-- Vector Databases -->
+<div class="flex flex-col">
+<div class="category-label">
+<i class="fas fa-database mr-1"></i> Vector Databases
+                    </div>
+<div class="tool-card flex-grow">
+<div class="flex items-center mb-3">
+<i class="fas fa-database tool-icon mr-3"></i>
+<h3 class="text-xl font-semibold">LlamaIndex</h3>
+</div>
+<p class="text-gray-300 text-sm">
+                            Flexible framework for indexing and retrieving knowledge bases.
+                        </p>
+<div class="mt-3 flex items-center">
+<i class="fas fa-check-circle text-teal-400 mr-2"></i>
+<span class="text-gray-300 text-sm">Supports advanced retrieval strategies</span>
+</div>
+</div>
+</div>
+<!-- Evaluation Tools -->
+<div class="flex flex-col">
+<div class="category-label">
+<i class="fas fa-chart-line mr-1"></i> Evaluation Tools
+                    </div>
+<div class="tool-card flex-grow">
+<div class="flex items-center mb-3">
+<i class="fas fa-award tool-icon mr-3"></i>
+<h3 class="text-xl font-semibold">RAGAS</h3>
+</div>
+<p class="text-gray-300 text-sm">
+                            Comprehensive evaluation framework for RAG systems.
+                        </p>
+<div class="mt-3 flex items-center">
+<i class="fas fa-check-circle text-teal-400 mr-2"></i>
+<span class="text-gray-300 text-sm">Automated assessment of retrieval quality</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom section with additional tools -->
+<div class="mt-6 grid grid-cols-3 gap-6">
+<!-- Monitoring Tools -->
+<div class="tool-card">
+<div class="flex items-center mb-2">
+<i class="fas fa-eye text-teal-400 mr-2"></i>
+<h3 class="text-lg font-medium">Monitoring &amp; Debugging</h3>
+</div>
+<p class="text-gray-300 text-sm">
+                        Tools for tracking RAG pipeline performance and debugging issues.
+                    </p>
+</div>
+<!-- Embedding Models -->
+<div class="tool-card">
+<div class="flex items-center mb-2">
+<i class="fas fa-vector-square text-teal-400 mr-2"></i>
+<h3 class="text-lg font-medium">Embedding Models</h3>
+</div>
+<p class="text-gray-300 text-sm">
+                        Libraries for generating embeddings for RAG systems.
+                    </p>
+</div>
+<!-- RAG-as-a-Service -->
+<div class="tool-card">
+<div class="flex items-center mb-2">
+<i class="fas fa-cloud text-teal-400 mr-2"></i>
+<h3 class="text-lg font-medium">RAG-as-a-Service</h3>
+</div>
+<p class="text-gray-300 text-sm">
+                        Cloud platforms offering managed RAG capabilities.
+                    </p>
+</div>
+</div>
+<!-- Page number -->
+<div class="absolute bottom-4 right-6 text-gray-500" style="visibility: hidden;">
+                21/22
+            </div>
+</div>
+</div>
+
+</body></html>

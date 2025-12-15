@@ -1,0 +1,171 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Introduction: The Evolution of RAG</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+        
+        body, html {width: 1280px; min-height: 720px; margin: 0;
+            padding: 0;
+            font-family: 'Roboto', 'Segoe UI', sans-serif;}
+        
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            
+            background: linear-gradient(135deg, #000000 0%, #111111 100%);
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .highlight-text {
+            color: #00b7b3;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px;
+        }
+        
+        .feature-icon {
+            color: #00b7b3;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        
+        .evolution-arrow {
+            height: 3px;
+            background: linear-gradient(90deg, rgba(0, 183, 179, 0.2), rgba(0, 183, 179, 0.8), rgba(0, 183, 179, 0.2));
+            position: relative;
+        }
+        
+        .evolution-arrow:after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: -8px;
+            width: 0;
+            height: 0;
+            border-left: 12px solid #00b7b3;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+        }
+        
+        .evolution-node {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: #00b7b3;
+            box-shadow: 0 0 10px rgba(0, 183, 179, 0.6);
+        }
+    
+body {
+    width: 1280px;
+    min-height: 720px;
+    
+    
+}</style>
+</head>
+<body>
+<div class="slide bg-black text-white flex flex-col">
+<!-- Background grid pattern -->
+<div class="grid-pattern"></div>
+<!-- Content container -->
+<div class="z-10 px-16 py-12 flex flex-col h-full">
+<!-- Title section -->
+<div class="mb-8">
+<h1 class="text-40xl font-bold text-teal-400">Introduction: The Evolution of RAG</h1>
+<div class="w-24 h-1 bg-teal-400 mt-2"></div>
+</div>
+<!-- Main content section -->
+<div class="flex-grow flex flex-col">
+<!-- RAG Introduction -->
+<div class="mb-8">
+<p class="text-xl text-gray-300">
+                        Retrieval-Augmented Generation (RAG) has emerged as a pivotal technique for enhancing Large Language Models (LLMs), 
+                        addressing their inherent limitations by integrating external knowledge sources.
+                    </p>
+</div>
+<!-- Key Benefits -->
+<div class="grid grid-cols-2 gap-8 mb-8">
+<div>
+<h3 class="text-2xl font-semibold text-white mb-4">Key Benefits of RAG</h3>
+<div class="space-y-4">
+<div class="feature-item">
+<i class="fas fa-check-circle text-2xl feature-icon"></i>
+<div>
+<h4 class="text-xl font-medium text-teal-400">Enhanced Factual Accuracy</h4>
+<p class="text-gray-300">Generates more accurate responses by grounding in external evidence</p>
+</div>
+</div>
+<div class="feature-item">
+<i class="fas fa-sync-alt text-2xl feature-icon"></i>
+<div>
+<h4 class="text-xl font-medium text-teal-400">Dynamic Knowledge Updates</h4>
+<p class="text-gray-300">Incorporates fresh information without retraining the model</p>
+</div>
+</div>
+<div class="feature-item">
+<i class="fas fa-search-plus text-2xl feature-icon"></i>
+<div>
+<h4 class="text-xl font-medium text-teal-400">Improved Transparency</h4>
+<p class="text-gray-300">Provides traceable sources for generated content</p>
+</div>
+</div>
+</div>
+</div>
+<!-- RAG Evolution Visualization -->
+<div class="flex flex-col items-center justify-center">
+<h3 class="text-2xl font-semibold text-white mb-6">Evolution of RAG Paradigms</h3>
+<div class="w-full flex justify-between items-center mb-2">
+<div class="evolution-node"></div>
+<div class="evolution-arrow w-1/4"></div>
+<div class="evolution-node"></div>
+<div class="evolution-arrow w-1/4"></div>
+<div class="evolution-node"></div>
+</div>
+<div class="w-full flex justify-between text-center">
+<div class="w-1/3">
+<div class="text-teal-400 text-xl font-medium mb-1">Naive RAG</div>
+<p class="text-gray-400 text-sm">Foundational approach</p>
+</div>
+<div class="w-1/3">
+<div class="text-teal-400 text-xl font-medium mb-1">Advanced RAG</div>
+<p class="text-gray-400 text-sm">Enhanced techniques</p>
+</div>
+<div class="w-1/3">
+<div class="text-teal-400 text-xl font-medium mb-1">Modular RAG</div>
+<p class="text-gray-400 text-sm">Flexible architecture</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom summary -->
+<div class="mt-auto">
+<p class="text-xl text-gray-300">
+                        This presentation explores how RAG has evolved from a simple retrieval-then-read approach to sophisticated 
+                        architectures, enhancing LLM capabilities through external knowledge integration.
+                    </p>
+</div>
+</div>
+<!-- Page number -->
+<div class="absolute bottom-4 right-6 text-gray-500" style="visibility: hidden;">
+                3/22
+            </div>
+</div>
+</div>
+</body></html>

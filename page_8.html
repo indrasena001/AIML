@@ -1,0 +1,195 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Advanced RAG: Overview &amp; Motivation</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+        
+        body, html {width: 1280px; min-height: 720px; margin: 0;
+            padding: 0;
+            font-family: 'Roboto', 'Segoe UI', sans-serif;}
+        
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            
+            background: linear-gradient(135deg, #000000 0%, #111111 100%);
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .highlight-text {
+            color: #00b7b3;
+        }
+        
+        .bullet-point {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        
+        .bullet-icon {
+            color: #00b7b3;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        
+        .feature-box {
+            border: 1px solid rgba(0, 183, 179, 0.3);
+            border-radius: 8px;
+            padding: 16px;
+            background-color: rgba(0, 183, 179, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-box:hover {
+            background-color: rgba(0, 183, 179, 0.1);
+            box-shadow: 0 0 15px rgba(0, 183, 179, 0.2);
+        }
+        
+        .pipeline-step {
+            padding: 10px;
+            border-radius: 6px;
+            background-color: rgba(0, 183, 179, 0.1);
+            border: 1px solid rgba(0, 183, 179, 0.3);
+            margin: 0 5px;
+            position: relative;
+        }
+        
+        .pipeline-arrow {
+            color: #00b7b3;
+            font-size: 24px;
+            margin: 0 5px;
+        }
+    
+body {
+    width: 1280px;
+    min-height: 720px;
+    
+    
+}</style>
+</head>
+<body>
+<div class="slide bg-black text-white flex flex-col">
+<!-- Background grid pattern -->
+<div class="grid-pattern"></div>
+<!-- Content container -->
+<div class="z-10 px-16 py-12 flex flex-col h-full">
+<!-- Title section -->
+<div class="mb-6">
+<h1 class="text-40xl font-bold text-teal-400">Advanced RAG: Overview &amp; Motivation</h1>
+<div class="w-24 h-1 bg-teal-400 mt-2"></div>
+</div>
+<!-- Introduction section -->
+<div class="mb-6">
+<p class="text-xl text-gray-300">
+                    Advanced RAG emerged to address limitations of Naive RAG by enhancing both pre-retrieval and post-retrieval stages,
+                    improving the quality and relevance of context provided to LLMs.
+                </p>
+</div>
+<!-- Pipeline visualization -->
+<div class="flex justify-center items-center mb-8">
+<div class="pipeline-step">
+<i class="fas fa-keyboard mr-2 text-teal-400"></i> User Query
+                </div>
+<div class="pipeline-arrow">
+<i class="fas fa-chevron-right"></i>
+</div>
+<div class="pipeline-step">
+<i class="fas fa-search mr-2 text-teal-400"></i> Enhanced Retrieval
+                </div>
+<div class="pipeline-arrow">
+<i class="fas fa-chevron-right"></i>
+</div>
+<div class="pipeline-step">
+<i class="fas fa-file-alt mr-2 text-teal-400"></i> Re-ranking
+                </div>
+<div class="pipeline-arrow">
+<i class="fas fa-chevron-right"></i>
+</div>
+<div class="pipeline-step">
+<i class="fas fa-robot mr-2 text-teal-400"></i> Generation
+                </div>
+</div>
+<!-- Main content in two columns -->
+<div class="flex gap-8 mb-6">
+<!-- Left column: Motivation -->
+<div class="w-1/2">
+<h3 class="text-2xl font-semibold text-teal-400 mb-4 flex items-center">
+<i class="fas fa-lightbulb mr-3"></i> Motivation
+                    </h3>
+<ul class="space-y-3">
+<li class="bullet-point">
+<i class="fas fa-check-circle text-teal-400 text-xl mr-3 mt-1"></i>
+<span class="text-gray-300">Overcome suboptimal retrieval accuracy of Naive RAG</span>
+</li>
+<li class="bullet-point">
+<i class="fas fa-check-circle text-teal-400 text-xl mr-3 mt-1"></i>
+<span class="text-gray-300">Reduce noise and irrelevance passed to the generator</span>
+</li>
+<li class="bullet-point">
+<i class="fas fa-check-circle text-teal-400 text-xl mr-3 mt-1"></i>
+<span class="text-gray-300">Improve factual accuracy and coherence of outputs</span>
+</li>
+</ul>
+</div>
+<!-- Right column: Key Enhancements -->
+<div class="w-1/2">
+<h3 class="text-2xl font-semibold text-teal-400 mb-4 flex items-center">
+<i class="fas fa-cogs mr-3"></i> Key Enhancements
+                    </h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="feature-box">
+<h4 class="text-lg font-medium text-teal-400 mb-2">
+<i class="fas fa-search-plus mr-2"></i> Pre-retrieval
+                            </h4>
+<p class="text-gray-300 text-sm">Query expansion, rewriting, and advanced indexing</p>
+</div>
+<div class="feature-box">
+<h4 class="text-lg font-medium text-teal-400 mb-2">
+<i class="fas fa-sort-amount-down mr-2"></i> Post-retrieval
+                            </h4>
+<p class="text-gray-300 text-sm">Re-ranking and contextual compression</p>
+</div>
+<div class="feature-box">
+<h4 class="text-lg font-medium text-teal-400 mb-2">
+<i class="fas fa-brain mr-2"></i> Quality Focus
+                            </h4>
+<p class="text-gray-300 text-sm">Prioritizing relevant information</p>
+</div>
+<div class="feature-box">
+<h4 class="text-lg font-medium text-teal-400 mb-2">
+<i class="fas fa-compress-arrows-alt mr-2"></i> Context Management
+                            </h4>
+<p class="text-gray-300 text-sm">Optimizing information density</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom quote -->
+<div class="mt-auto">
+<blockquote class="italic text-gray-400 border-l-4 border-teal-400 pl-4 py-2">
+                    &#34;Advanced RAG seeks to ensure that the LLM receives the most pertinent and high-quality information, thereby leading to more accurate, coherent, and grounded generations.&#34;
+                </blockquote>
+</div>
+<!-- Page number -->
+<div class="absolute bottom-4 right-6 text-gray-500" style="visibility: hidden;">
+                8/22
+            </div>
+</div>
+</div>
+
+</body></html>

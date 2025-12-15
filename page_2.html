@@ -1,0 +1,154 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Abstract - RAG Evolution</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+        
+        body, html {width: 1280px; min-height: 720px; margin: 0;
+            padding: 0;
+            font-family: 'Roboto', 'Segoe UI', sans-serif;}
+        
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            
+            background: linear-gradient(135deg, #000000 0%, #111111 100%);
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .highlight-text {
+            color: #00b7b3;
+        }
+        
+        .bullet-point {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        
+        .bullet-icon {
+            color: #00b7b3;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+        
+        .paradigm-box {
+            border: 1px solid rgba(0, 183, 179, 0.3);
+            border-radius: 8px;
+            padding: 12px;
+            background-color: rgba(0, 183, 179, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .paradigm-box:hover {
+            background-color: rgba(0, 183, 179, 0.1);
+            box-shadow: 0 0 15px rgba(0, 183, 179, 0.2);
+        }
+    
+body {
+    width: 1280px;
+    min-height: 720px;
+    
+    
+}</style>
+</head>
+<body>
+<div class="slide bg-black text-white flex flex-col">
+<!-- Background grid pattern -->
+<div class="grid-pattern"></div>
+<!-- Content container -->
+<div class="z-10 px-16 py-12 flex flex-col h-full">
+<!-- Title section -->
+<div class="mb-8">
+<h1 class="text-40xl font-bold text-teal-400">Abstract</h1>
+<div class="w-24 h-1 bg-teal-400 mt-2"></div>
+</div>
+<!-- Introduction section -->
+<div class="mb-8">
+<p class="text-xl text-gray-300">
+                    Retrieval-Augmented Generation (RAG) has emerged as a pivotal technique for enhancing Large Language Models (LLMs), 
+                    addressing their inherent limitations such as factual inaccuracies and knowledge staleness by integrating external knowledge sources.
+                </p>
+</div>
+<!-- RAG Paradigms Overview -->
+<div class="flex-grow grid grid-cols-3 gap-6">
+<!-- Naive RAG -->
+<div class="paradigm-box">
+<h3 class="text-xl font-semibold text-teal-400 mb-2 flex items-center">
+<i class="fas fa-cube mr-2"></i> Naive RAG
+                    </h3>
+<p class="text-gray-300 mb-3">The foundational &#34;retrieve-then-read&#34; approach.</p>
+<ul class="text-gray-300 space-y-2">
+<li class="flex items-start">
+<i class="fas fa-check-circle text-teal-400 mr-2 mt-1"></i>
+<span>Simple pipeline with indexing, retrieval, and generation</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-check-circle text-teal-400 mr-2 mt-1"></i>
+<span>Addresses hallucination through external context</span>
+</li>
+</ul>
+</div>
+<!-- Advanced RAG -->
+<div class="paradigm-box">
+<h3 class="text-xl font-semibold text-teal-400 mb-2 flex items-center">
+<i class="fas fa-cogs mr-2"></i> Advanced RAG
+                    </h3>
+<p class="text-gray-300 mb-3">Enhanced pre/post retrieval strategies.</p>
+<ul class="text-gray-300 space-y-2">
+<li class="flex items-start">
+<i class="fas fa-check-circle text-teal-400 mr-2 mt-1"></i>
+<span>Query expansion, rewriting, and re-ranking</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-check-circle text-teal-400 mr-2 mt-1"></i>
+<span>Improves retrieval quality and relevance</span>
+</li>
+</ul>
+</div>
+<!-- Modular RAG -->
+<div class="paradigm-box">
+<h3 class="text-xl font-semibold text-teal-400 mb-2 flex items-center">
+<i class="fas fa-puzzle-piece mr-2"></i> Modular RAG
+                    </h3>
+<p class="text-gray-300 mb-3">Flexible, non-linear architecture.</p>
+<ul class="text-gray-300 space-y-2">
+<li class="flex items-start">
+<i class="fas fa-check-circle text-teal-400 mr-2 mt-1"></i>
+<span>Plug-and-play components with dynamic workflows</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-check-circle text-teal-400 mr-2 mt-1"></i>
+<span>Supports iterative retrieval and complex reasoning</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Bottom summary -->
+<div class="mt-8">
+<p class="text-xl text-gray-300">
+                    This presentation traces RAG&#39;s evolution, analyzing architectural nuances and impact on enhancing LLM capabilities.
+                </p>
+</div>
+<!-- Page number -->
+<div class="absolute bottom-4 right-6 text-gray-500" style="visibility: hidden;">
+                2/22
+            </div>
+</div>
+</div>
+
+</body></html>

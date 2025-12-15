@@ -1,0 +1,191 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Naive RAG: Overview &amp; Motivation</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+        
+        body, html {width: 1280px; min-height: 720px; margin: 0;
+            padding: 0;
+            font-family: 'Roboto', 'Segoe UI', sans-serif;}
+        
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            
+            background: linear-gradient(135deg, #000000 0%, #111111 100%);
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .highlight-text {
+            color: #00b7b3;
+        }
+        
+        .feature-box {
+            border: 1px solid rgba(0, 183, 179, 0.3);
+            border-radius: 8px;
+            padding: 16px;
+            background-color: rgba(0, 183, 179, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-box:hover {
+            background-color: rgba(0, 183, 179, 0.1);
+            box-shadow: 0 0 15px rgba(0, 183, 179, 0.2);
+        }
+        
+        .process-arrow {
+            position: relative;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(0, 183, 179, 0.4), rgba(0, 183, 179, 0.8));
+            margin: 0 15px;
+        }
+        
+        .process-arrow:after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: -9px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid rgba(0, 183, 179, 0.8);
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+        }
+    
+body {
+    width: 1280px;
+    min-height: 720px;
+    
+    
+}</style>
+</head>
+<body>
+<div class="slide bg-black text-white flex flex-col">
+<!-- Background grid pattern -->
+<div class="grid-pattern"></div>
+<!-- Content container -->
+<div class="z-10 px-16 py-12 flex flex-col h-full">
+<!-- Title section -->
+<div class="mb-6">
+<h1 class="text-4xl font-bold text-teal-400">Naive RAG: Overview &amp; Motivation</h1>
+<div class="w-24 h-1 bg-teal-400 mt-2"></div>
+</div>
+<!-- Main content -->
+<div class="flex flex-grow">
+<!-- Left column - Overview -->
+<div class="w-1/2 pr-8">
+<h2 class="text-2xl font-semibold mb-4 text-white">Overview</h2>
+<div class="mb-6">
+<p class="text-xl text-gray-300 mb-4">
+                            Naive RAG represents the foundational &#34;retrieve-then-read&#34; approach, serving as the initial step in integrating external knowledge with large language models.
+                        </p>
+<div class="feature-box mb-4">
+<div class="flex items-center mb-2">
+<i class="fas fa-book-open text-teal-400 text-xl mr-3"></i>
+<h3 class="text-xl font-medium text-white">Definition</h3>
+</div>
+<p class="text-gray-300">
+                                A straightforward pipeline where a language model first retrieves relevant information from an external knowledge base and then uses this information to generate a response.
+                            </p>
+</div>
+<!-- Naive RAG Process Visualization -->
+<div class="bg-gray-900 bg-opacity-50 rounded-lg p-5 my-4">
+<h3 class="text-lg font-medium text-white mb-3">The Naive RAG Process</h3>
+<div class="flex items-center justify-between">
+<div class="text-center">
+<div class="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center mx-auto mb-2">
+<i class="fas fa-search text-teal-400 text-2xl"></i>
+</div>
+<p class="text-sm text-gray-300">Retrieve</p>
+</div>
+<div class="process-arrow w-16"></div>
+<div class="text-center">
+<div class="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center mx-auto mb-2">
+<i class="fas fa-file-alt text-teal-400 text-2xl"></i>
+</div>
+<p class="text-sm text-gray-300">Read</p>
+</div>
+<div class="process-arrow w-16"></div>
+<div class="text-center">
+<div class="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center mx-auto mb-2">
+<i class="fas fa-robot text-teal-400 text-2xl"></i>
+</div>
+<p class="text-sm text-gray-300">Generate</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right column - Motivation -->
+<div class="w-1/2 pl-8">
+<h2 class="text-2xl font-semibold mb-4 text-white">Motivation</h2>
+<div class="mb-6">
+<p class="text-xl text-gray-300 mb-4">
+                            The primary motivation behind Naive RAG is to mitigate common issues associated with standalone Large Language Models (LLMs).
+                        </p>
+<div class="space-y-4">
+<div class="feature-box">
+<div class="flex items-center">
+<div class="rounded-full bg-teal-400 bg-opacity-20 p-2 mr-3">
+<i class="fas fa-ghost text-teal-400"></i>
+</div>
+<div>
+<h3 class="text-lg font-medium text-white">Hallucination</h3>
+<p class="text-gray-300">
+                                        Generating factually incorrect information by the model
+                                    </p>
+</div>
+</div>
+</div>
+<div class="feature-box">
+<div class="flex items-center">
+<div class="rounded-full bg-teal-400 bg-opacity-20 p-2 mr-3">
+<i class="fas fa-clock text-teal-400"></i>
+</div>
+<div>
+<h3 class="text-lg font-medium text-white">Knowledge Staleness</h3>
+<p class="text-gray-300">
+                                        Inability to access up-to-date information beyond training cutoff
+                                    </p>
+</div>
+</div>
+</div>
+<div class="feature-box">
+<div class="flex items-center">
+<div class="rounded-full bg-teal-400 bg-opacity-20 p-2 mr-3">
+<i class="fas fa-link text-teal-400"></i>
+</div>
+<div>
+<h3 class="text-lg font-medium text-white">External Knowledge Integration</h3>
+<p class="text-gray-300">
+                                        Providing external, verifiable context to ground LLM outputs
+                                    </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Page number -->
+<div class="absolute bottom-4 right-6 text-gray-500" style="visibility: hidden;">
+                5/22
+            </div>
+</div>
+</div>
+
+</body></html>

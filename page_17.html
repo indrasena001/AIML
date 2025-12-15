@@ -1,0 +1,181 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Applications Across RAG Paradigms</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+        
+        body, html {width: 1280px; min-height: 720px; overflow: hidden; margin: 0;
+            padding: 0;
+            font-family: 'Roboto', 'Segoe UI', sans-serif;}
+        
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            
+            background: linear-gradient(135deg, #000000 0%, #111111 100%);
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .application-card {
+            border: 1px solid rgba(0, 183, 179, 0.3);
+            border-radius: 8px;
+            padding: 16px;
+            background-color: rgba(0, 183, 179, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .application-card:hover {
+            background-color: rgba(0, 183, 179, 0.1);
+            box-shadow: 0 0 15px rgba(0, 183, 179, 0.2);
+        }
+        
+        .icon-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: rgba(0, 183, 179, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+    
+body {
+    width: 1280px;
+    min-height: 720px;
+    overflow: hidden;
+    
+}</style>
+</head>
+<body>
+<div class="slide bg-black text-white flex flex-col" style=" overflow: hidden;">
+<!-- Background grid pattern -->
+<div class="grid-pattern"></div>
+<!-- Content container -->
+<div class="z-10 px-16 py-10 flex flex-col h-full">
+<!-- Title section -->
+<div class="mb-4">
+<h1 class="text-4xl font-bold text-teal-400">Applications Across RAG Paradigms</h1>
+<div class="w-32 h-1 bg-teal-400 mt-2"></div>
+</div>
+<!-- Introduction section -->
+<div class="mb-4">
+<p class="text-xl text-gray-300">
+                    RAG technology has been implemented across diverse settings, enhancing LLM capabilities through external knowledge integration.
+                </p>
+</div>
+<!-- Applications grid -->
+<div class="flex-grow grid grid-cols-2 gap-8">
+<!-- Academic Applications -->
+<div>
+<h2 class="text-2xl font-semibold text-white mb-4 flex items-center">
+<i class="fas fa-graduation-cap text-teal-400 mr-3"></i>Academic Settings
+                    </h2>
+<div class="grid grid-cols-2 gap-4 h-64">
+<!-- Scientific Summarization -->
+<div class="application-card">
+<div class="icon-circle">
+<i class="fas fa-file-alt text-teal-400 text-xl"></i>
+</div>
+<h3 class="text-xl font-medium text-teal-400 mb-2">Scientific Summarization</h3>
+<ul class="text-gray-300 space-y-2">
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span>Advanced RAG enables accurate summarization</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span>Reduces hallucinations in scientific content</span>
+</li>
+</ul>
+</div>
+<!-- Tutoring -->
+<div class="application-card">
+<div class="icon-circle">
+<i class="fas fa-chalkboard-teacher text-teal-400 text-xl"></i>
+</div>
+<h3 class="text-xl font-medium text-teal-400 mb-2">Tutoring Systems</h3>
+<ul class="text-gray-300 space-y-2">
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span>Provides dynamic, up-to-date educational content</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span>Adapts to different learning domains</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Enterprise Applications -->
+<div>
+<h2 class="text-2xl font-semibold text-white mb-4 flex items-center">
+<i class="fas fa-building text-teal-400 mr-3"></i>Enterprise Environments
+                    </h2>
+<div class="grid grid-cols-3 gap-4 h-64">
+<!-- Chatbots -->
+<div class="application-card">
+<div class="icon-circle">
+<i class="fas fa-comment-dots text-teal-400 text-xl"></i>
+</div>
+<h3 class="text-xl font-medium text-teal-400 mb-2">Chatbots</h3>
+<ul class="text-gray-300 space-y-2">
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span>Enhances factual accuracy</span>
+</li>
+</ul>
+</div>
+<!-- QA Systems -->
+<div class="application-card">
+<div class="icon-circle">
+<i class="fas fa-question-circle text-teal-400 text-xl"></i>
+</div>
+<h3 class="text-xl font-medium text-teal-400 mb-2">QA Systems</h3>
+<ul class="text-gray-300 space-y-2">
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span>Grounds answers in external knowledge</span>
+</li>
+</ul>
+</div>
+<!-- Copilots -->
+<div class="application-card">
+<div class="icon-circle">
+<i class="fas fa-user-cog text-teal-400 text-xl"></i>
+</div>
+<h3 class="text-xl font-medium text-teal-400 mb-2">Copilots</h3>
+<ul class="text-gray-300 space-y-2">
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span>Integrates with existing workflows</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Page number -->
+<div class="absolute bottom-4 right-6 text-gray-500" style="visibility: hidden;">
+                17/22
+            </div>
+</div>
+</div>
+
+</body></html>

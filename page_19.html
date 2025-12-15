@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Limitations of Current RAG Systems</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+        
+        body, html {width: 1280px; min-height: 720px; margin: 0;
+            padding: 0;
+            font-family: 'Roboto', 'Segoe UI', sans-serif;}
+        
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            
+            background: linear-gradient(135deg, #000000 0%, #111111 100%);
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .limitation-card {
+            background-color: rgba(0, 0, 0, 0.5);
+            border-left: 4px solid #00b7b3;
+            transition: all 0.3s ease;
+        }
+        
+        .limitation-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 0 15px rgba(0, 183, 179, 0.3);
+        }
+        
+        .icon-container {
+            background-color: rgba(0, 183, 179, 0.15);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .bullet-point {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 8px;
+        }
+        
+        .bullet-icon {
+            color: #00b7b3;
+            margin-right: 10px;
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+    
+body {
+    width: 1280px;
+    min-height: 720px;
+    
+    
+}</style>
+</head>
+<body>
+<div class="slide bg-black text-white flex flex-col">
+<!-- Background grid pattern -->
+<div class="grid-pattern"></div>
+<!-- Content container -->
+<div class="z-10 px-16 py-12 flex flex-col h-full">
+<!-- Title section -->
+<div class="mb-8">
+<h1 class="text-4xl font-bold text-teal-400">Limitations of Current RAG Systems</h1>
+<div class="w-32 h-1 bg-teal-400 mt-2"></div>
+</div>
+<!-- Main content -->
+<div class="flex-grow grid grid-cols-3 gap-6">
+<!-- Embedding Quality Issues -->
+<div class="limitation-card p-5 rounded-lg">
+<div class="flex items-center mb-4">
+<div class="icon-container mr-4">
+<i class="fas fa-vector-square text-teal-400 text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-white">Embedding Quality Issues</h3>
+</div>
+<div class="space-y-3">
+<div class="bullet-point">
+<i class="fas fa-circle text-xs bullet-icon"></i>
+<p class="text-gray-300">Embedding models struggle with domain-specific terminology</p>
+</div>
+<div class="bullet-point">
+<i class="fas fa-circle text-xs bullet-icon"></i>
+<p class="text-gray-300">Chunking strategies often lead to either too large or too small segments</p>
+</div>
+<div class="bullet-point">
+<i class="fas fa-circle text-xs bullet-icon"></i>
+<p class="text-gray-300">Semantic similarity measures fail to capture nuanced relationships</p>
+</div>
+</div>
+</div>
+<!-- Long-Context Reasoning -->
+<div class="limitation-card p-5 rounded-lg">
+<div class="flex items-center mb-4">
+<div class="icon-container mr-4">
+<i class="fas fa-expand-arrows-alt text-teal-400 text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-white">Long-Context Reasoning</h3>
+</div>
+<div class="space-y-3">
+<div class="bullet-point">
+<i class="fas fa-circle text-xs bullet-icon"></i>
+<p class="text-gray-300">Fixed context window sizes limit retrieved information</p>
+</div>
+<div class="bullet-point">
+<i class="fas fa-circle text-xs bullet-icon"></i>
+<p class="text-gray-300">LLMs struggle to maintain coherence in lengthy conversations</p>
+</div>
+<div class="bullet-point">
+<i class="fas fa-circle text-xs bullet-icon"></i>
+<p class="text-gray-300">Information overload occurs when too many documents are retrieved</p>
+</div>
+</div>
+</div>
+<!-- Multi-Hop Reasoning -->
+<div class="limitation-card p-5 rounded-lg">
+<div class="flex items-center mb-4">
+<div class="icon-container mr-4">
+<i class="fas fa-project-diagram text-teal-400 text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold text-white">Multi-Hop Reasoning</h3>
+</div>
+<div class="space-y-3">
+<div class="bullet-point">
+<i class="fas fa-circle text-xs bullet-icon"></i>
+<p class="text-gray-300">Limited ability to perform iterative reasoning across documents</p>
+</div>
+<div class="bullet-point">
+<i class="fas fa-circle text-xs bullet-icon"></i>
+<p class="text-gray-300">Difficulty in tracking relationships between entities across multiple sources</p>
+</div>
+<div class="bullet-point">
+<i class="fas fa-circle text-xs bullet-icon"></i>
+<p class="text-gray-300">Lack of true compositional reasoning compared to human-like thinking</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom summary -->
+<div class="mt-8 bg-opacity-50 bg-gray-900 p-4 rounded-lg border-l-4 border-teal-400">
+<p class="text-gray-300">
+<i class="fas fa-lightbulb text-teal-400 mr-2"></i>
+<span class="font-semibold">Key Insight:</span> 
+                    These limitations highlight the need for more sophisticated retrieval mechanisms, improved embedding models, 
+                    and enhanced reasoning capabilities in future RAG systems.
+                </p>
+</div>
+<!-- Page number -->
+<div class="absolute bottom-4 right-6 text-gray-500" style="visibility: hidden;">
+                19/22
+            </div>
+</div>
+</div>
+
+</body></html>

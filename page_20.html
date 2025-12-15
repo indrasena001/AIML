@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Future Directions in RAG Research</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+        
+        body, html {width: 1280px; min-height: 720px; margin: 0;
+            padding: 0;
+            font-family: 'Roboto', 'Segoe UI', sans-serif;}
+        
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            
+            background: linear-gradient(135deg, #000000 0%, #111111 100%);
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .highlight-text {
+            color: #00b7b3;
+        }
+        
+        .future-card {
+            border: 1px solid rgba(0, 183, 179, 0.3);
+            border-radius: 12px;
+            padding: 20px;
+            background-color: rgba(0, 183, 179, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .future-card:hover {
+            background-color: rgba(0, 183, 179, 0.1);
+            box-shadow: 0 0 15px rgba(0, 183, 179, 0.2);
+        }
+        
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(0, 183, 179, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        
+        .connection-line {
+            height: 2px;
+            background: linear-gradient(90deg, rgba(0, 183, 179, 0.2), rgba(0, 183, 179, 0.8), rgba(0, 183, 179, 0.2));
+            margin: 20px 0;
+        }
+    
+body {
+    width: 1280px;
+    min-height: 720px;
+    
+    
+}</style>
+</head>
+<body>
+<div class="slide bg-black text-white flex flex-col">
+<!-- Background grid pattern -->
+<div class="grid-pattern"></div>
+<!-- Content container -->
+<div class="z-10 px-16 py-12 flex flex-col h-full">
+<!-- Title section -->
+<div class="mb-8">
+<h1 class="text-4xl font-bold text-teal-400">Future Directions in RAG Research</h1>
+<div class="w-32 h-1 bg-teal-400 mt-2"></div>
+</div>
+<!-- Introduction text -->
+<p class="text-xl text-gray-300 mb-6">
+                Exploring emerging approaches that enhance RAG capabilities.
+            </p>
+<!-- Future directions cards -->
+<div class="grid grid-cols-3 gap-8 flex-grow">
+<!-- Graph-RAG -->
+<div class="future-card">
+<div class="icon-circle">
+<i class="fas fa-project-diagram text-3xl text-teal-400"></i>
+</div>
+<h3 class="text-2xl font-semibold text-teal-400 mb-3">Graph-RAG</h3>
+<p class="text-gray-300 mb-4">
+                        Integrates structured knowledge graphs with RAG systems.
+                    </p>
+<ul class="text-gray-300 space-y-2 mt-auto">
+<li class="flex items-start">
+<i class="fas fa-arrow-right text-teal-400 mr-2 mt-1"></i>
+<span>Enables navigation of complex relationships</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-arrow-right text-teal-400 mr-2 mt-1"></i>
+<span>Improves reasoning over structured data</span>
+</li>
+</ul>
+</div>
+<!-- Self-RAG -->
+<div class="future-card">
+<div class="icon-circle">
+<i class="fas fa-brain text-3xl text-teal-400"></i>
+</div>
+<h3 class="text-2xl font-semibold text-teal-400 mb-3">Self-RAG</h3>
+<p class="text-gray-300 mb-4">
+                        Incorporates self-reflection capabilities into the generation process.
+                    </p>
+<ul class="text-gray-300 space-y-2 mt-auto">
+<li class="flex items-start">
+<i class="fas fa-arrow-right text-teal-400 mr-2 mt-1"></i>
+<span>Enables LLMs to evaluate their own responses</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-arrow-right text-teal-400 mr-2 mt-1"></i>
+<span>Reduces hallucination through internal verification</span>
+</li>
+</ul>
+</div>
+<!-- Multimodal-RAG -->
+<div class="future-card">
+<div class="icon-circle">
+<i class="fas fa-photo-video text-3xl text-teal-400"></i>
+</div>
+<h3 class="text-2xl font-semibold text-teal-400 mb-3">Multimodal-RAG</h3>
+<p class="text-gray-300 mb-4">
+                        Extends RAG to integrate cross-modal information.
+                    </p>
+<ul class="text-gray-300 space-y-2 mt-auto">
+<li class="flex items-start">
+<i class="fas fa-arrow-right text-teal-400 mr-2 mt-1"></i>
+<span>Processes text with images, audio, video</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-arrow-right text-teal-400 mr-2 mt-1"></i>
+<span>Enables richer context understanding</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Bottom note -->
+<div class="mt-6">
+<p class="text-gray-400 italic">
+                    These approaches aim to enhance RAG systems&#39; capabilities and address current limitations.
+                </p>
+</div>
+<!-- Page number -->
+<div class="absolute bottom-4 right-6 text-gray-500" style="visibility: hidden;">
+                20/22
+            </div>
+</div>
+</div>
+
+</body></html>

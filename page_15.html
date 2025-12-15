@@ -1,0 +1,172 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Evaluation Metrics - RAG Evolution</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+        
+        body, html {width: 1280px; min-height: 720px; margin: 0;
+            padding: 0;
+            font-family: 'Roboto', 'Segoe UI', sans-serif;}
+        
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            
+            background: linear-gradient(135deg, #000000 0%, #111111 100%);
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .metric-card {
+            border: 1px solid rgba(0, 183, 179, 0.3);
+            border-radius: 8px;
+            padding: 16px;
+            background-color: rgba(0, 183, 179, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .metric-card:hover {
+            background-color: rgba(0, 183, 179, 0.1);
+            box-shadow: 0 0 15px rgba(0, 183, 179, 0.2);
+        }
+        
+        .category-header {
+            position: relative;
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+        }
+        
+        .category-header:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: #00b7b3;
+        }
+    
+body {
+    width: 1280px;
+    min-height: 720px;
+    
+    
+}</style>
+</head>
+<body>
+<div class="slide bg-black text-white flex flex-col">
+<!-- Background grid pattern -->
+<div class="grid-pattern"></div>
+<!-- Content container -->
+<div class="z-10 px-16 py-12 flex flex-col h-full">
+<!-- Title section -->
+<div class="mb-8">
+<h1 class="text-40xl font-bold text-teal-400">Evaluation Metrics</h1>
+<div class="w-24 h-1 bg-teal-400 mt-2"></div>
+</div>
+<!-- Introduction section -->
+<div class="mb-6">
+<p class="text-xl text-gray-300">
+                    Assessing RAG systems requires metrics across multiple dimensions to evaluate both retrieval and generation quality.
+                </p>
+</div>
+<!-- Metrics grid -->
+<div class="flex-grow grid grid-cols-3 gap-6">
+<!-- Retrieval Metrics -->
+<div class="flex flex-col space-y-4">
+<h2 class="text-2xl font-semibold text-teal-400 category-header">Retrieval Metrics</h2>
+<!-- Recall -->
+<div class="metric-card">
+<h3 class="text-xl font-medium text-white mb-2 flex items-center">
+<i class="fas fa-search text-teal-400 mr-3"></i> Recall
+                        </h3>
+<p class="text-gray-300">
+                            Measures the retriever&#39;s ability to find all relevant documents. High recall ensures LLM has sufficient information.
+                        </p>
+</div>
+<!-- Precision -->
+<div class="metric-card">
+<h3 class="text-xl font-medium text-white mb-2 flex items-center">
+<i class="fas fa-bullseye text-teal-400 mr-3"></i> Precision
+                        </h3>
+<p class="text-gray-300">
+                            Measures the proportion of relevant documents among retrieved results. High precision reduces noise for LLM.
+                        </p>
+</div>
+</div>
+<!-- Generation Metrics -->
+<div class="flex flex-col space-y-4">
+<h2 class="text-2xl font-semibold text-teal-400 category-header">Generation Metrics</h2>
+<!-- Faithfulness -->
+<div class="metric-card">
+<h3 class="text-xl font-medium text-white mb-2 flex items-center">
+<i class="fas fa-check-double text-teal-400 mr-3"></i> Faithfulness
+                        </h3>
+<p class="text-gray-300">
+                            Evaluates if generated content is fully based on retrieved evidence. Core measure of RAG&#39;s hallucination reduction.
+                        </p>
+</div>
+<!-- Answer Relevance -->
+<div class="metric-card">
+<h3 class="text-xl font-medium text-white mb-2 flex items-center">
+<i class="fas fa-link text-teal-400 mr-3"></i> Answer Relevance
+                        </h3>
+<p class="text-gray-300">
+                            Measures direct correlation between generated answer and user query. Critical for task performance.
+                        </p>
+</div>
+<!-- Information Integration -->
+<div class="metric-card">
+<h3 class="text-xl font-medium text-white mb-2 flex items-center">
+<i class="fas fa-object-group text-teal-400 mr-3"></i> Information Integration
+                        </h3>
+<p class="text-gray-300">
+                            Assesses ability to synthesize information from multiple documents for complex queries.
+                        </p>
+</div>
+</div>
+<!-- System Metrics -->
+<div class="flex flex-col space-y-4">
+<h2 class="text-2xl font-semibold text-teal-400 category-header">System Metrics</h2>
+<!-- Latency -->
+<div class="metric-card">
+<h3 class="text-xl font-medium text-white mb-2 flex items-center">
+<i class="fas fa-clock text-teal-400 mr-3"></i> Latency
+                        </h3>
+<p class="text-gray-300">
+                            Time from query receipt to final response. Critical for real-time applications like chatbots.
+                        </p>
+</div>
+<!-- Noise Robustness -->
+<div class="metric-card">
+<h3 class="text-xl font-medium text-white mb-2 flex items-center">
+<i class="fas fa-shield-alt text-teal-400 mr-3"></i> Noise Robustness
+                        </h3>
+<p class="text-gray-300">
+                            System&#39;s ability to maintain performance with irrelevant or misleading documents in knowledge base.
+                        </p>
+</div>
+</div>
+</div>
+<!-- Page number -->
+<div class="absolute bottom-4 right-6 text-gray-500" style="visibility: hidden;">
+                15/22
+            </div>
+</div>
+</div>
+
+</body></html>

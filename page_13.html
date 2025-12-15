@@ -1,0 +1,205 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Modular RAG: Key Modules</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+        
+        body, html {width: 1280px; min-height: 720px; margin: 0;
+            padding: 0;
+            font-family: 'Roboto', 'Segoe UI', sans-serif;}
+        
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            
+            background: linear-gradient(135deg, #000000 0%, #111111 100%);
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .module-card {
+            border: 1px solid rgba(0, 183, 179, 0.3);
+            border-radius: 8px;
+            padding: 16px;
+            background-color: rgba(0, 183, 179, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .module-card:hover {
+            background-color: rgba(0, 183, 179, 0.1);
+            box-shadow: 0 0 15px rgba(0, 183, 179, 0.2);
+        }
+        
+        .module-icon {
+            color: #00b7b3;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        
+        .connector {
+            position: absolute;
+            background: linear-gradient(90deg, rgba(0, 183, 179, 0.2), rgba(0, 183, 179, 0.8), rgba(0, 183, 179, 0.2));
+            height: 2px;
+        }
+    
+body {
+    width: 1280px;
+    min-height: 720px;
+    
+    
+}</style>
+</head>
+<body>
+<div class="slide bg-black text-white flex flex-col">
+<!-- Background grid pattern -->
+<div class="grid-pattern"></div>
+<!-- Content container -->
+<div class="z-10 px-16 py-12 flex flex-col h-full">
+<!-- Title section -->
+<div class="mb-6">
+<h1 class="text-4xl font-bold text-teal-400">Modular RAG: Key Modules</h1>
+<div class="w-24 h-1 bg-teal-400 mt-2"></div>
+</div>
+<!-- Introduction section -->
+<div class="mb-6">
+<p class="text-xl text-gray-300">
+                    Modular RAG systems leverage specialized components that can be combined dynamically to address complex information retrieval and generation tasks.
+                </p>
+</div>
+<!-- Key Modules Grid -->
+<div class="grid grid-cols-3 gap-5 mb-6">
+<!-- Search Module -->
+<div class="module-card">
+<div class="flex items-center mb-3">
+<i class="fas fa-search module-icon mr-3"></i>
+<h3 class="text-xl font-semibold text-teal-400">Search Module</h3>
+</div>
+<p class="text-gray-300 mb-3">Implements sophisticated retrieval strategies.</p>
+<ul class="text-gray-300 space-y-2 text-sm">
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span>Query expansion and rewriting</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span>Multi-source retrieval</span>
+</li>
+</ul>
+</div>
+<!-- Memory Module -->
+<div class="module-card">
+<div class="flex items-center mb-3">
+<i class="fas fa-memory module-icon mr-3"></i>
+<h3 class="text-xl font-semibold text-teal-400">Memory Module</h3>
+</div>
+<p class="text-gray-300 mb-3">Manages contextual information across interactions.</p>
+<ul class="text-gray-300 space-y-2 text-sm">
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span>Dialogue history tracking</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span>Context window management</span>
+</li>
+</ul>
+</div>
+<!-- Routing Module -->
+<div class="module-card">
+<div class="flex items-center mb-3">
+<i class="fas fa-random module-icon mr-3"></i>
+<h3 class="text-xl font-semibold text-teal-400">Routing Module</h3>
+</div>
+<p class="text-gray-300 mb-3">Directs flow based on intermediate outputs.</p>
+<ul class="text-gray-300 space-y-2 text-sm">
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span>Dynamic workflow control</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span>Conditional retrieval paths</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Second Row of Modules -->
+<div class="grid grid-cols-3 gap-5">
+<!-- Generation Module -->
+<div class="module-card">
+<div class="flex items-center mb-3">
+<i class="fas fa-brain module-icon mr-3"></i>
+<h3 class="text-xl font-semibold text-teal-400">Generation Module</h3>
+</div>
+<p class="text-gray-300 mb-3">Specialized LLM orchestration.</p>
+<ul class="text-gray-300 space-y-2 text-sm">
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span>Task-specific fine-tuning</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span>Response synthesis</span>
+</li>
+</ul>
+</div>
+<!-- Integration Module -->
+<div class="module-card">
+<div class="flex items-center mb-3">
+<i class="fas fa-object-group module-icon mr-3"></i>
+<h3 class="text-xl font-semibold text-teal-400">Integration Module</h3>
+</div>
+<p class="text-gray-300 mb-3">Combines outputs from multiple sources.</p>
+<ul class="text-gray-300 space-y-2 text-sm">
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span>Evidence fusion</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span>Multi-document synthesis</span>
+</li>
+</ul>
+</div>
+<!-- Evaluation Module -->
+<div class="module-card">
+<div class="flex items-center mb-3">
+<i class="fas fa-chart-line module-icon mr-3"></i>
+<h3 class="text-xl font-semibold text-teal-400">Evaluation Module</h3>
+</div>
+<p class="text-gray-300 mb-3">Assesses retrieval and generation quality.</p>
+<ul class="text-gray-300 space-y-2 text-sm">
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span>Relevance scoring</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span>Confidence estimation</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Page number -->
+<div class="absolute bottom-4 right-6 text-gray-500" style="visibility: hidden;">
+                13/22
+            </div>
+</div>
+</div>
+
+</body></html>

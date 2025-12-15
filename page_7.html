@@ -1,0 +1,176 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Naive RAG: Limitations</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"/>
+<script src="https://picture-search.skywork.ai/aippt/static/tailwindcss.com"></script><style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+        
+        body, html {width: 1280px; min-height: 720px; margin: 0;
+            padding: 0;
+            font-family: 'Roboto', 'Segoe UI', sans-serif;}
+        
+        .slide {
+            width: 1280px;
+            min-height: 720px;
+            position: relative;
+            
+            background: linear-gradient(135deg, #000000 0%, #111111 100%);
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 20px 20px;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .limitation-card {
+            border: 1px solid rgba(0, 183, 179, 0.3);
+            border-radius: 8px;
+            padding: 16px;
+            background-color: rgba(0, 183, 179, 0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .limitation-card:hover {
+            background-color: rgba(0, 183, 179, 0.1);
+            box-shadow: 0 0 15px rgba(0, 183, 179, 0.2);
+        }
+        
+        .icon-circle {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: rgba(0, 183, 179, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+        }
+    
+body {
+    width: 1280px;
+    min-height: 720px;
+    
+    
+}</style>
+</head>
+<body>
+<div class="slide bg-black text-white flex flex-col">
+<!-- Background grid pattern -->
+<div class="grid-pattern"></div>
+<!-- Content container -->
+<div class="z-10 px-16 py-12 flex flex-col h-full">
+<!-- Title section -->
+<div class="mb-8">
+<h1 class="text-40xl font-bold text-teal-400">Naive RAG: Limitations</h1>
+<div class="w-24 h-1 bg-teal-400 mt-2"></div>
+</div>
+<!-- Introduction -->
+<div class="mb-6">
+<p class="text-xl text-gray-300">
+                    Despite its foundational role, Naive RAG exhibits several key weaknesses that limit its effectiveness in complex scenarios:
+                </p>
+</div>
+<!-- Limitations Grid -->
+<div class="grid grid-cols-2 gap-6 flex-grow">
+<!-- Retrieval Quality Issues -->
+<div class="limitation-card">
+<div class="flex items-start">
+<div class="icon-circle flex-shrink-0">
+<i class="fas fa-search text-teal-400 text-xl"></i>
+</div>
+<div class="ml-4">
+<h3 class="text-xl font-semibold text-teal-400 mb-3">Retrieval Quality Issues</h3>
+<ul class="text-gray-300 space-y-2">
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span><span class="font-medium text-white">Low Precision/Recall:</span> Retrieves irrelevant documents (low precision) or misses highly relevant ones (low recall)</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span><span class="font-medium text-white">Query Sensitivity:</span> Highly sensitive to query phrasing, potentially leading to poor retrieval with ambiguous queries</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Generation Challenges -->
+<div class="limitation-card">
+<div class="flex items-start">
+<div class="icon-circle flex-shrink-0">
+<i class="fas fa-brain text-teal-400 text-xl"></i>
+</div>
+<div class="ml-4">
+<h3 class="text-xl font-semibold text-teal-400 mb-3">Generation Challenges</h3>
+<ul class="text-gray-300 space-y-2">
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span><span class="font-medium text-white">Continued Hallucination:</span> LLMs can still hallucinate or ignore provided information, especially with noisy/contradictory context</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span><span class="font-medium text-white">Lack of Iterative Reasoning:</span> Performs only a single retrieval step, lacking ability to refine queries or retrieve additional information</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Indexing Process Problems -->
+<div class="limitation-card">
+<div class="flex items-start">
+<div class="icon-circle flex-shrink-0">
+<i class="fas fa-database text-teal-400 text-xl"></i>
+</div>
+<div class="ml-4">
+<h3 class="text-xl font-semibold text-teal-400 mb-3">Indexing Process Problems</h3>
+<ul class="text-gray-300 space-y-2">
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span><span class="font-medium text-white">Suboptimal Chunking:</span> Ineffective strategies lead to chunks that are either too large (irrelevant info) or too small (lacking context)</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span><span class="font-medium text-white">Stale Embeddings:</span> Quality degrades over time as knowledge base evolves, requiring frequent re-indexing which is computationally expensive</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Context Window Constraints -->
+<div class="limitation-card">
+<div class="flex items-start">
+<div class="icon-circle flex-shrink-0">
+<i class="fas fa-window-maximize text-teal-400 text-xl"></i>
+</div>
+<div class="ml-4">
+<h3 class="text-xl font-semibold text-teal-400 mb-3">Context Window Constraints</h3>
+<ul class="text-gray-300 space-y-2">
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span><span class="font-medium text-white">Fixed Context Size:</span> Limited amount of retrieved information that can be passed to the model</span>
+</li>
+<li class="flex items-start">
+<i class="fas fa-angle-right text-teal-400 mr-2 mt-1"></i>
+<span><span class="font-medium text-white">Information Ignoring:</span> May force model to ignore valuable context if too many documents are retrieved</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Page number -->
+<div class="absolute bottom-4 right-6 text-gray-500" style="visibility: hidden;">
+                7/22
+            </div>
+</div>
+</div>
+
+</body></html>
